@@ -1,0 +1,113 @@
+
+
+// Job 1
+// Number of threads = 4
+// Time step = 100
+// Particle number = 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
+//----------------------------------------------------------------------------------------------------------------------------
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ icpc -pthread pthread_MultiBody.cpp -o MultiBody
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=16 -t=1000
+Problem Scale: number of bodies: 16, number of time step: 1000
+serial multibody: 0.001756 (sec)
+prallel multibody pthread_reduce : 0.086841 (sec), speedup = 0.020220
+parallel multibody pthread_divide : 0.041543 (sec), speedup = 0.042268
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=32 -t=1000
+Problem Scale: number of bodies: 32, number of time step: 1000
+serial multibody: 0.006327 (sec)
+prallel multibody pthread_reduce : 0.090051 (sec), speedup = 0.070260
+parallel multibody pthread_divide : 0.042806 (sec), speedup = 0.147807
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=64 -t=1000
+Problem Scale: number of bodies: 64, number of time step: 1000
+serial multibody: 0.021074 (sec)
+prallel multibody pthread_reduce : 0.094251 (sec), speedup = 0.223599
+parallel multibody pthread_divide : 0.049241 (sec), speedup = 0.427982
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=128 -t=1000
+Problem Scale: number of bodies: 128, number of time step: 1000
+serial multibody: 0.085409 (sec)
+prallel multibody pthread_reduce : 0.103974 (sec), speedup = 0.821449
+parallel multibody pthread_divide : 0.061042 (sec), speedup = 1.399186
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=256 -t=1000
+Problem Scale: number of bodies: 256, number of time step: 1000
+serial multibody: 0.315344 (sec)
+prallel multibody pthread_reduce : 0.173182 (sec), speedup = 1.820880
+parallel multibody pthread_divide : 0.133853 (sec), speedup = 2.355903
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=512 -t=1000
+Problem Scale: number of bodies: 512, number of time step: 1000
+serial multibody: 1.267037 (sec)
+prallel multibody pthread_reduce : 0.503199 (sec), speedup = 2.517965
+parallel multibody pthread_divide : 0.448822 (sec), speedup = 2.823031
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=1024 -t=1000
+Problem Scale: number of bodies: 1024, number of time step: 1000
+serial multibody: 5.187973 (sec)
+prallel multibody pthread_reduce : 1.580488 (sec), speedup = 3.282514
+parallel multibody pthread_divide : 1.371502 (sec), speedup = 3.782696
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=2048 -t=1000
+Problem Scale: number of bodies: 2048, number of time step: 1000
+serial multibody: 21.570728 (sec)
+prallel multibody pthread_reduce : 5.622894 (sec), speedup = 3.836232
+parallel multibody pthread_divide : 5.218072 (sec), speedup = 4.133850
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=4096 -t=1000
+Problem Scale: number of bodies: 4096, number of time step: 1000
+serial multibody: 82.742593 (sec)
+prallel multibody pthread_reduce : 25.081715 (sec), speedup = 3.298921
+parallel multibody pthread_divide : 23.939969 (sec), speedup = 3.456253
+/--------------------------------------------------------------------------------------------------
+
+
+
+
+
+// Job 2
+// Number of threads = 4
+// Time step = 100
+// Particle number = 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
+//-------------------------------------------------------------------------------------------------
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ 
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=16 -t=100
+Problem Scale: number of bodies: 16, number of time step: 100
+serial multibody: 0.000199 (sec)
+prallel multibody pthread_reduce : 0.012231 (sec), speedup = 0.016278
+parallel multibody pthread_divide : 0.004089 (sec), speedup = 0.048689
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=32 -t=100
+Problem Scale: number of bodies: 32, number of time step: 100
+serial multibody: 0.000564 (sec)
+prallel multibody pthread_reduce : 0.010451 (sec), speedup = 0.053971
+parallel multibody pthread_divide : 0.004095 (sec), speedup = 0.137749
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=64 -t=100
+Problem Scale: number of bodies: 64, number of time step: 100
+serial multibody: 0.002676 (sec)
+prallel multibody pthread_reduce : 0.011592 (sec), speedup = 0.230855
+parallel multibody pthread_divide : 0.004714 (sec), speedup = 0.567717
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=128 -t=100
+Problem Scale: number of bodies: 128, number of time step: 100
+serial multibody: 0.009316 (sec)
+prallel multibody pthread_reduce : 0.013217 (sec), speedup = 0.704817
+parallel multibody pthread_divide : 0.007939 (sec), speedup = 1.173443
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=256 -t=100
+Problem Scale: number of bodies: 256, number of time step: 100
+serial multibody: 0.032799 (sec)
+prallel multibody pthread_reduce : 0.020688 (sec), speedup = 1.585381
+parallel multibody pthread_divide : 0.013744 (sec), speedup = 2.386380
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=512 -t=100
+Problem Scale: number of bodies: 512, number of time step: 100
+serial multibody: 0.132371 (sec)
+prallel multibody pthread_reduce : 0.064508 (sec), speedup = 2.052016
+parallel multibody pthread_divide : 0.046074 (sec), speedup = 2.873034
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=1024 -t=100
+Problem Scale: number of bodies: 1024, number of time step: 100
+serial multibody: 0.512439 (sec)
+prallel multibody pthread_reduce : 0.172786 (sec), speedup = 2.965738
+parallel multibody pthread_divide : 0.159584 (sec), speedup = 3.211096
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=2048 -t=100
+Problem Scale: number of bodies: 2048, number of time step: 100
+serial multibody: 2.071333 (sec)
+prallel multibody pthread_reduce : 0.608537 (sec), speedup = 3.403791
+parallel multibody pthread_divide : 0.533153 (sec), speedup = 3.885063
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ ./MultiBody -s=4096 -t=100
+Problem Scale: number of bodies: 4096, number of time step: 100
+serial multibody: 8.273449 (sec)
+prallel multibody pthread_reduce : 2.264479 (sec), speedup = 3.653577
+parallel multibody pthread_divide : 2.039901 (sec), speedup = 4.055809
+yangyang@ubuntu:~/Desktop/CodeTest/CodeTest5$ 
+/--------------------------------------------------------------------------------------------------
+

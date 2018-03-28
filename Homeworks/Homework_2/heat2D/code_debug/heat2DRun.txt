@@ -1,0 +1,421 @@
+Last login: Thu Jan  5 01:36:45 on ttys000
+yangyangdeMacBook-Pro:~ YangYang$ ssh yangyang@162.105.25.131
+yangyang@162.105.25.131's password: 
+Welcome to Ubuntu 15.04 (GNU/Linux 3.19.0-39-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Last login: Thu Jan  5 01:21:09 2017 from 10.128.134.78
+Copyright (C) 2009-2014 Intel Corporation. All rights reserved.
+Intel(R) Inspector XE 2015 (build 366509)
+Copyright (C) 2009-2014 Intel Corporation. All rights reserved.
+Intel(R) VTune(TM) Amplifier XE 2015 (build 367959)
+Copyright (C) 2009-2014 Intel Corporation. All rights reserved.
+Intel(R) Advisor XE 2015 (build 367266)
+gcc: error: unrecognized command line option ‘--showme:link’
+
+
+
+
+
+
+
+
+
+yangyang@yangyang-XPS-8900:~$ cd /home/yangyang/Desktop/CodeTest/CodeTest11
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(278): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+pthread_heat2D.c(591): error: argument of type "char *" is incompatible with parameter of type "float"
+      rintf("\n Problem Scale: NXPROB = %d, NYPROB = %d， nts = %d\n\n", NXPROB, NYPROB, parms.nts);
+            ^
+
+pthread_heat2D.c(591): error #140: too many arguments in function call
+      rintf("\n Problem Scale: NXPROB = %d, NYPROB = %d， nts = %d\n\n", NXPROB, NYPROB, parms.nts);
+                                                                        ^
+
+compilation aborted for pthread_heat2D.c (code 2)
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(278): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 120, NYPROB = 120， nts = 5000000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 39, ny_local = 59 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 39, ny_local = 59 
+Thread id: 1, offset_x = 40, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 40, ny_local = 59 
+Thread id: 2, offset_x = 79, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 39, ny_local = 59 
+Thread id: 3, offset_x = 1, offset_y = 60 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 39, ny_local = 59 
+Thread id: 4, offset_x = 40, offset_y = 60 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 40, ny_local = 59 
+Thread id: 5, offset_x = 79, offset_y = 60 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 1 created successful.
+Thread tid: 2 created successful.
+Thread tid: 3 created successful.
+Thread tid: 4 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 0, stating computing step...
+thread id: 1, stating computing step...
+thread id: 2, stating computing step...
+thread id: 3, stating computing step...
+thread id: 4, stating computing step...
+thread id: 0, finished computing step...
+thread id: 5, finished computing step...
+thread id: 3, finished computing step...
+thread id: 1, finished computing step...
+thread id: 4, finished computing step...
+thread id: 2, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 0.000000
+mtx parallel:  cost =  119.8544761770 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 0.000000
+serial:  cost =   87.7443300450 
+Speed Up = 0.732091
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(277): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 120, NYPROB = 120， nts = 500000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 39, ny_local = 59 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 39, ny_local = 59 
+Thread id: 1, offset_x = 40, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 40, ny_local = 59 
+Thread id: 2, offset_x = 79, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 39, ny_local = 59 
+Thread id: 3, offset_x = 1, offset_y = 60 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 39, ny_local = 59 
+Thread id: 4, offset_x = 40, offset_y = 60 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 40, ny_local = 59 
+Thread id: 5, offset_x = 79, offset_y = 60 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 2 created successful.
+Thread tid: 3 created successful.
+Thread tid: 4 created successful.
+Thread tid: 1 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 3, stating computing step...
+thread id: 2, stating computing step...
+thread id: 0, stating computing step...
+thread id: 4, stating computing step...
+thread id: 1, stating computing step...
+thread id: 5, finished computing step...
+thread id: 2, finished computing step...
+thread id: 1, finished computing step...
+thread id: 0, finished computing step...
+thread id: 4, finished computing step...
+thread id: 3, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 639553.073485
+mtx parallel:  cost =   12.2399506860 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 0.000000
+serial:  cost =    8.7716123170 
+Speed Up = 0.716638
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(277): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 600, NYPROB = 600， nts = 500000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 199, ny_local = 299 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 199, ny_local = 299 
+Thread id: 1, offset_x = 200, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 200, ny_local = 299 
+Thread id: 2, offset_x = 399, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 199, ny_local = 299 
+Thread id: 3, offset_x = 1, offset_y = 300 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 199, ny_local = 299 
+Thread id: 4, offset_x = 200, offset_y = 300 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 200, ny_local = 299 
+Thread id: 5, offset_x = 399, offset_y = 300 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 1 created successful.
+Thread tid: 3 created successful.
+Thread tid: 4 created successful.
+Thread tid: 2 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 3, stating computing step...
+thread id: 1, stating computing step...
+thread id: 0, stating computing step...
+thread id: 4, stating computing step...
+thread id: 2, stating computing step...
+thread id: 3, finished computing step...
+thread id: 2, finished computing step...
+thread id: 0, finished computing step...
+thread id: 1, finished computing step...
+thread id: 5, finished computing step...
+thread id: 4, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 802701376493846.250000
+mtx parallel:  cost =  110.7361543450 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 79611869673243.500000
+serial:  cost =  236.1466142150 
+Speed Up = 2.132516
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(278): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 1200, NYPROB = 1200， nts = 500000
+
+Segmentation fault (core dumped)
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ulimit -s unlimited
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 1200, NYPROB = 1200， nts = 500000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 399, ny_local = 599 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 399, ny_local = 599 
+Thread id: 1, offset_x = 400, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 400, ny_local = 599 
+Thread id: 2, offset_x = 799, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 399, ny_local = 599 
+Thread id: 3, offset_x = 1, offset_y = 600 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 399, ny_local = 599 
+Thread id: 4, offset_x = 400, offset_y = 600 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 400, ny_local = 599 
+Thread id: 5, offset_x = 799, offset_y = 600 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 2 created successful.
+Thread tid: 1 created successful.
+Thread tid: 3 created successful.
+Thread tid: 4 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 2, stating computing step...
+thread id: 3, stating computing step...
+thread id: 0, stating computing step...
+thread id: 4, stating computing step...
+thread id: 1, stating computing step...
+thread id: 4, finished computing step...
+thread id: 2, finished computing step...
+thread id: 0, finished computing step...
+thread id: 5, finished computing step...
+thread id: 3, finished computing step...
+thread id: 1, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 72835821573534480.000000
+mtx parallel:  cost =  549.4440846960 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 40409767747291784.000000
+serial:  cost =  974.2090435070 
+Speed Up = 1.773081
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(278): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 120, NYPROB = 120， nts = 500000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 39, ny_local = 59 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 39, ny_local = 59 
+Thread id: 1, offset_x = 40, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 40, ny_local = 59 
+Thread id: 2, offset_x = 79, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 39, ny_local = 59 
+Thread id: 3, offset_x = 1, offset_y = 60 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 39, ny_local = 59 
+Thread id: 4, offset_x = 40, offset_y = 60 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 40, ny_local = 59 
+Thread id: 5, offset_x = 79, offset_y = 60 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 1 created successful.
+Thread tid: 4 created successful.
+Thread tid: 2 created successful.
+Thread tid: 3 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 4, stating computing step...
+thread id: 1, stating computing step...
+thread id: 0, stating computing step...
+thread id: 2, stating computing step...
+thread id: 3, stating computing step...
+thread id: 2, finished computing step...
+thread id: 5, finished computing step...
+thread id: 0, finished computing step...
+thread id: 4, finished computing step...
+thread id: 3, finished computing step...
+thread id: 1, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 632907.431765
+mtx parallel:  cost =   12.0588549390 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 0.000000
+serial:  cost =    8.7908596110 
+Speed Up = 0.728996
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ls
+final_parallel.dat  final_serial.dat  heat2D  initial_parallel.dat  initial_serial.dat  pthread_heat2D.c  pthread_heat2D.c~
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ vim pthread_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ icc -pthread pthread_heat2D.c -o heat2D
+pthread_heat2D.c(278): warning #810: conversion from "void *" to "int" may lose significant bits
+    thread_num = (int)(mydata);                                         // type conversion   
+                 ^
+
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ ./heat2D
+
+ Problem Scale: NXPROB = 2400, NYPROB = 2400， nts = 500000
+
+Wrote file: initial_parallel.dat
+
+Thread id: 0, nx_local = 799, ny_local = 1199 
+Thread id: 0, offset_x = 1, offset_y = 1 
+Thread id: 0, up_id = 3, bottom_id = -1, left_id = -1, right_id = 1
+
+Thread id: 1, nx_local = 799, ny_local = 1199 
+Thread id: 1, offset_x = 800, offset_y = 1 
+Thread id: 1, up_id = 4, bottom_id = -1, left_id = 0, right_id = 2
+
+Thread id: 2, nx_local = 800, ny_local = 1199 
+Thread id: 2, offset_x = 1599, offset_y = 1 
+Thread id: 2, up_id = 5, bottom_id = -1, left_id = 1, right_id = -1
+
+Thread id: 3, nx_local = 799, ny_local = 1199 
+Thread id: 3, offset_x = 1, offset_y = 1200 
+Thread id: 3, up_id = -1, bottom_id = 0, left_id = -1, right_id = 4
+
+Thread id: 4, nx_local = 799, ny_local = 1199 
+Thread id: 4, offset_x = 800, offset_y = 1200 
+Thread id: 4, up_id = -1, bottom_id = 1, left_id = 3, right_id = 5
+
+Thread id: 5, nx_local = 800, ny_local = 1199 
+Thread id: 5, offset_x = 1599, offset_y = 1200 
+Thread id: 5, up_id = -1, bottom_id = 2, left_id = 4, right_id = -1
+
+Thread tid: 0 created successful.
+Thread tid: 1 created successful.
+Thread tid: 4 created successful.
+Thread tid: 3 created successful.
+Thread tid: 2 created successful.
+Thread tid: 5 created successful.
+thread id: 5, stating computing step...
+thread id: 0, stating computing step...
+thread id: 1, stating computing step...
+thread id: 4, stating computing step...
+thread id: 3, stating computing step...
+thread id: 2, stating computing step...
+thread id: 4, finished computing step...
+thread id: 0, finished computing step...
+thread id: 3, finished computing step...
+thread id: 1, finished computing step...
+thread id: 2, finished computing step...
+thread id: 5, finished computing step...
+Wrote file: final_parallel.dat
+Sum of whole field is 5132331471506452480.000000
+mtx parallel:  cost = 2490.0252091020 
+Wrote file: initial_serial.dat
+Wrote file: final_serial.dat
+Sum of whole field is 4388449525505232896.000000
+serial:  cost = 4225.4302848400 
+Speed Up = 1.696943
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest11$ 

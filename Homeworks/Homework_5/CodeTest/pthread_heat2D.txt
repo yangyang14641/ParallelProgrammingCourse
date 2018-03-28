@@ -1,0 +1,9 @@
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ulimit -s unlimited
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ icpc -pthread pthread_heat2D.cpp -o heat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ./heat2D
+
+ Problem Scale: NXPROB = 1200, NYPROB = 1200， nts = 500000
+
+serial: 1428.974339
+pthread: 466.923103
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ 

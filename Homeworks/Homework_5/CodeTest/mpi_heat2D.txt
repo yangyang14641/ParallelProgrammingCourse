@@ -1,0 +1,191 @@
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ vim mpi_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpicc mpi_heat2D.c -o mpiheat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpirun -np 7 ./mpiheat2D
+
+Probelm Scale: NXPROB = 120, NYPROB = 120, STEPS = 500000
+
+ Number of Process entered by user is : 7
+ Number of Worker Process seted in Program is: 6
+Starting mpi_heat2D with 6 worker tasks.
+Grid size: X= 120  Y= 120  Time steps= 500000
+Grid Domain split numbers in X: 3, and split numbers in Y: 2
+Initializing grid and writing initial.dat file...
+Sent to task 1: rows= 40 cols= 60 offsetrow= 0 offsetcol= 0
+left= 0 right= 2 bottom= 0 up= 4
+Sent to task 2: rows= 40 cols= 60 offsetrow= 40 offsetcol= 0
+left= 1 right= 3 bottom= 0 up= 5
+Sent to task 3: rows= 40 cols= 60 offsetrow= 80 offsetcol= 0
+left= 2 right= 0 bottom= 0 up= 6
+task= 1  rowstart= 1  rowend= 39  colstart= 1  colend= 59
+Task 1 received work. Beginning time steps...
+task= 2  rowstart= 40  rowend= 79  colstart= 1  colend= 59
+Task 2 received work. Beginning time steps...
+Sent to task 4: rows= 40 cols= 60 offsetrow= 0 offsetcol= 60
+left= 0 right= 5 bottom= 1 up= 0
+Sent to task 5: rows= 40 cols= 60 offsetrow= 40 offsetcol= 60
+task= 3  rowstart= 80  rowend= 118  colstart= 1  colend= 59
+Task 3 received work. Beginning time steps...
+left= 4 right= 6 bottom= 2 up= 0
+task= 4  rowstart= 1  rowend= 39  colstart= 60  colend= 118
+Task 4 received work. Beginning time steps...
+Sent to task 6: rows= 40 cols= 60 offsetrow= 80 offsetcol= 60
+left= 5 right= 0 bottom= 3 up= 0
+task= 6  rowstart= 80  rowend= 118  colstart= 60  colend= 118
+Task 6 received work. Beginning time steps...
+task= 5  rowstart= 40  rowend= 79  colstart= 60  colend= 118
+Task 5 received work. Beginning time steps...
+Writing final.dat file and generating graph...
+Click on MORE button to view initial/final states.
+Click on EXIT button to quit program.
+Sum of whole field is 0.000000
+Total time use is 1.9713819026947021E+01 second
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ vim pthread_heat2D.cpp
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ icpc -pthread pthread_heat2D.cpp -o heat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ./heat2D
+
+ Problem Scale: NXPROB = 120, NYPROB = 120， nts = 500000
+
+serial: 14.198089
+pthread: 12.167301
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ 
+/———————————————————————————————————————————————————————————————————————————————————————————
+/———————————————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
+
+
+
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ vim mpi_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpicc mpi_heat2D.c -o mpiHeat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpirun -np 7 ./mpiHeat2D
+
+Probelm Scale: NXPROB = 600, NYPROB = 600, STEPS = 500000
+
+ Number of Process entered by user is : 7
+ Number of Worker Process seted in Program is: 6
+Starting mpi_heat2D with 6 worker tasks.
+Grid size: X= 600  Y= 600  Time steps= 500000
+Grid Domain split numbers in X: 3, and split numbers in Y: 2
+Initializing grid and writing initial.dat file...
+Sent to task 1: rows= 200 cols= 300 offsetrow= 0 offsetcol= 0
+left= 0 right= 2 bottom= 0 up= 4
+task= 1  rowstart= 1  rowend= 199  colstart= 1  colend= 299
+Task 1 received work. Beginning time steps...
+Sent to task 2: rows= 200 cols= 300 offsetrow= 200 offsetcol= 0
+left= 1 right= 3 bottom= 0 up= 5
+task= 2  rowstart= 200  rowend= 399  colstart= 1  colend= 299
+Task 2 received work. Beginning time steps...
+Sent to task 3: rows= 200 cols= 300 offsetrow= 400 offsetcol= 0
+left= 2 right= 0 bottom= 0 up= 6
+task= 3  rowstart= 400  rowend= 598  colstart= 1  colend= 299
+Task 3 received work. Beginning time steps...
+Sent to task 4: rows= 200 cols= 300 offsetrow= 0 offsetcol= 300
+left= 0 right= 5 bottom= 1 up= 0
+task= 4  rowstart= 1  rowend= 199  colstart= 300  colend= 598
+Task 4 received work. Beginning time steps...
+Sent to task 5: rows= 200 cols= 300 offsetrow= 200 offsetcol= 300
+left= 4 right= 6 bottom= 2 up= 0
+task= 5  rowstart= 200  rowend= 399  colstart= 300  colend= 598
+Task 5 received work. Beginning time steps...
+Sent to task 6: rows= 200 cols= 300 offsetrow= 400 offsetcol= 300
+left= 5 right= 0 bottom= 3 up= 0
+task= 6  rowstart= 400  rowend= 598  colstart= 300  colend= 598
+Task 6 received work. Beginning time steps...
+Writing final.dat file and generating graph...
+Click on MORE button to view initial/final states.
+Click on EXIT button to quit program.
+Sum of whole field is -2357147193659.979004
+Total time use is 4.8343813109397888E+02 second
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ vim pthread_heat2D.cpp
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ icpc -pthread pthread_heat2D.cpp -o heat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ./heat2D
+
+ Problem Scale: NXPROB = 600, NYPROB = 600， nts = 500000
+
+serial: 357.691399
+pthread: 128.956751
+/———————————————————————————————————————————————————————————————————————————————————————————
+/———————————————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
+
+
+
+
+
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ vim mpi_heat2D.c
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpicc mpi_heat2D.c -o mpiHeat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpirun -np 7 ./mpiHeat2D
+APPLICATION TERMINATED WITH THE EXIT STRING: Segmentation fault (signal 11)
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ulimit -s unlimited
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ mpirun -np 7 ./mpiHeat2D
+
+Probelm Scale: NXPROB = 1200, NYPROB = 1200, STEPS = 500000
+
+ Number of Process entered by user is : 7
+ Number of Worker Process seted in Program is: 6
+Starting mpi_heat2D with 6 worker tasks.
+Grid size: X= 1200  Y= 1200  Time steps= 500000
+Grid Domain split numbers in X: 3, and split numbers in Y: 2
+Initializing grid and writing initial.dat file...
+Sent to task 1: rows= 400 cols= 600 offsetrow= 0 offsetcol= 0
+left= 0 right= 2 bottom= 0 up= 4
+task= 1  rowstart= 1  rowend= 399  colstart= 1  colend= 599
+Task 1 received work. Beginning time steps...
+Sent to task 2: rows= 400 cols= 600 offsetrow= 400 offsetcol= 0
+left= 1 right= 3 bottom= 0 up= 5
+task= 2  rowstart= 400  rowend= 799  colstart= 1  colend= 599
+Task 2 received work. Beginning time steps...
+Sent to task 3: rows= 400 cols= 600 offsetrow= 800 offsetcol= 0
+left= 2 right= 0 bottom= 0 up= 6
+task= 3  rowstart= 800  rowend= 1198  colstart= 1  colend= 599
+Task 3 received work. Beginning time steps...
+Sent to task 4: rows= 400 cols= 600 offsetrow= 0 offsetcol= 600
+left= 0 right= 5 bottom= 1 up= 0
+task= 4  rowstart= 1  rowend= 399  colstart= 600  colend= 1198
+Task 4 received work. Beginning time steps...
+Sent to task 5: rows= 400 cols= 600 offsetrow= 400 offsetcol= 600
+left= 4 right= 6 bottom= 2 up= 0
+task= 5  rowstart= 400  rowend= 799  colstart= 600  colend= 1198
+Task 5 received work. Beginning time steps...
+Sent to task 6: rows= 400 cols= 600 offsetrow= 800 offsetcol= 600
+left= 5 right= 0 bottom= 3 up= 0
+task= 6  rowstart= 800  rowend= 1198  colstart= 600  colend= 1198
+Task 6 received work. Beginning time steps...
+Writing final.dat file and generating graph...
+Click on MORE button to view initial/final states.
+Click on EXIT button to quit program.
+Sum of whole field is -4989081412791.169922
+Total time use is 1.9419226799011230E+03 second
+
+
+
+/———————————————————————————————————————————————————————————————————————————————————————————
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ 
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ulimit -s unlimited
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ icpc -pthread pthread_heat2D.cpp -o heat2D
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ ./heat2D
+
+ Problem Scale: NXPROB = 1200, NYPROB = 1200， nts = 500000
+
+serial: 1428.974339
+pthread: 466.923103
+yangyang@yangyang-XPS-8900:~/Desktop/CodeTest/CodeTest13$ 
+/———————————————————————————————————————————————————————————————————————————————————————————
+/———————————————————————————————————————————————————————————————————————————————————————————

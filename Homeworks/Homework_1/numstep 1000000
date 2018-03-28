@@ -1,0 +1,54 @@
+numstep = 1000000
+
+----------------------------------------------------------------------------------------------------------------
+GUN C++ result:
+
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ g++ -lrt PI.cpp -o PI -lpthread
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PI
+serial: PI=3.141592653589764250  cost=0.0003543964   
+syn:    PI=3.141592653589845519  cost=0.0098485969       speedup=0.035984
+asyn:   PI=3.141592653589871276  cost=0.0001317195       speedup=2.690539
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PI
+serial: PI=3.141592653589764250  cost=0.0010452804   
+syn:    PI=3.141592653589879269  cost=0.0092117469       speedup=0.113473
+asyn:   PI=3.141592653589871276  cost=0.0001322126       speedup=7.906057
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PI
+serial: PI=3.141592653589764250  cost=0.0003772998   
+syn:    PI=3.141592653589916129  cost=0.0092676635       speedup=0.040711
+asyn:   PI=3.141592653589871276  cost=0.0001325238       speedup=2.847034
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PI
+serial: PI=3.141592653589764250  cost=0.0007099929   
+syn:    PI=3.141592653589895257  cost=0.0096420047       speedup=0.073635
+asyn:   PI=3.141592653589871276  cost=0.0001590840       speedup=4.463006
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ 
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+Intel C++ result:
+
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ icpc -lrt PI.cpp -o PIintel -lpthread
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PIintel
+serial: PI=3.141592653589903250  cost=0.0000659315   
+syn:    PI=3.141592653589905026  cost=0.0091225747       speedup=0.007227
+asyn:   PI=3.141592653589878381  cost=0.0000418219       speedup=1.576483
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PIintel
+serial: PI=3.141592653589903250  cost=0.0000697021   
+syn:    PI=3.141592653589889927  cost=0.0089021471       speedup=0.007830
+asyn:   PI=3.141592653589878381  cost=0.0000410668       speedup=1.697286
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PIintel
+serial: PI=3.141592653589903250  cost=0.0000743886   
+syn:    PI=3.141592653589872608  cost=0.0085270968       speedup=0.008724
+asyn:   PI=3.141592653589878381  cost=0.0000376591       speedup=1.975315
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ ./PIintel
+serial: PI=3.141592653589903250  cost=0.0001054100   
+syn:    PI=3.141592653589897477  cost=0.0096323882       speedup=0.010943
+asyn:   PI=3.141592653589878825  cost=0.0000412095       speedup=2.557905
+yangyang@yangyang-XPS-8900:~/Desktop/Parallel Programming/Homework 1$ 
+
+
+
+
+
+

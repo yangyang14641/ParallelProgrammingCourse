@@ -24,4 +24,4 @@ Maybe, there are many mistakes in the both documents and Codes, because of the l
 I MAKE NO WARRANTIES, EXPRESS OR IMPLIED, THAT THEY ARE FREE OF ERROR.
 
 ## Copyright
-You can use and copy these works for any purpose, Except just copy to finish your homework or republish these works without proper declare their original author.
+You can use and copy these works for any academic purpose, Except just copy to finish your homework or republish these works without proper declare their original author.

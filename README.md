@@ -13,7 +13,7 @@ Parallel programming course at Peking University
 
   * Example codes of my Lectures on HPC to Prof. Shan Tang's group.
 
-  * We Gratefully Acknowledge Associate Prof. Hua-shan Yu from School of Electronics Engineering and Computer Science Peking University for his help both in course and final project.  
+  * We Gratefully Acknowledge Associate Prof. Hua-shan Yu from School of Electronics Engineering and Computer Science at Peking University for his help both in course and final project.  
 
 2. Reference Material's Programs 
   * Peter Pacheco's Book (An introduction to Parallel Programming)'s Materials. Codes of each chapter.

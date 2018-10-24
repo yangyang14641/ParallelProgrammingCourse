@@ -6,6 +6,8 @@ Parallel programming course at Peking University
 
   * Nine times of homeworks, both my homeworks and my partner Shiyao Li's homeworks. These homeworks including
   Pthreads, MPI and CUDA Parallel Programming Interface, and Fortran/C Programming Language.
+  
+  * Yao Hong's homeworks. (github.com/hong-yao)
 
   * Reference Codes and Training Materials are come from Lawrence Livermore National Laboratory, which written by Blaise Barney. Thanks a lot for the open resource. 
 

@@ -3,8 +3,7 @@ Parallel programming course at Peking University
 
 <center>
 <img src="https://octodex.github.com/images/baracktocat.jpg" width="50%" height="50%" />
- $ $
-Figure 1. Yes We Code
+Yes We Code
 </center>
 
 ## Contents

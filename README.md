@@ -1,7 +1,7 @@
 # ParallelProgrammingCourse
 Parallel programming course at Peking University
 
-![Yes We Code](https://octodex.github.com/images/baracktocat.jpg){width:20px; height:20px}
+![Yes We Code](https://octodex.github.com/images/baracktocat.jpg){width:1px; height:1px}
 
 ## Contents
 1. Homeworks and Projects

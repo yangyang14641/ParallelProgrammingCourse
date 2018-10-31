@@ -4,19 +4,10 @@ Parallel programming course at Peking University
 ## Contents
 1. Homeworks and Projects
 
-  * xxxxxxx
-  
-  * xxxxxxxx
+  * Parallel programming course report
 
-  * xxxxxxxx 
-
-  * xxxxxxxx
-
-  * xxxxxxxxx
-
-  * xxxxxxxxx
-
-2. xxxxxxxx
+2. Code
+  * Homework codes
 
 
 ## Warranty 

@@ -1,7 +1,10 @@
 # ParallelProgrammingCourse
 Parallel programming course at Peking University
-<img src="http://logok.org/wp-content/uploads/2014/04/Peking-University-logo.png" width="50%" height="50%" />
 
+<center>
+<img src="http://logok.org/wp-content/uploads/2014/04/Peking-University-logo.png" width="50%" height="50%" />
+</center>
+ 
 <center>
 <img src="https://octodex.github.com/images/baracktocat.jpg" width="50%" height="50%" />
 Yes We Code

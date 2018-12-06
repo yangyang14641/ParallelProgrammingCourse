@@ -3,7 +3,7 @@ Parallel programming course at Peking University
 
 <center>
 <img src="https://octodex.github.com/images/baracktocat.jpg" width="50%" height="50%" />
-<img src="http://logok.org/wp-content/uploads/2014/04/Peking-University-logo.png" style="width:213px;heigth:60px;">
+<img src="http://logok.org/wp-content/uploads/2014/04/Peking-University-logo.png" style="width:100px;heigth:30px;">
 Yes We Code
 </center>
 

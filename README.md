@@ -30,6 +30,9 @@ Parallel programming course at Peking University
   * Peter Pacheco's Book (An introduction to Parallel Programming)'s Materials. Codes of each chapter.
   * Other materials will be updated in the future. 
 
+3. Reference Papers
+  * Ristov S, Prodan R, Gusev M, et al. Superlinear speedup in HPC systems: Why and when?[C]. federated conference on computer science and information systems, 2016: 889-898.
+
 ## Warranty 
 Maybe, there are many mistakes in the both documents and Codes, because of the limitation of our knowledge and strength. As a result: THESE DOCUMENTS AND CODES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
 I MAKE NO WARRANTIES, EXPRESS OR IMPLIED, THAT THEY ARE FREE OF ERROR.
